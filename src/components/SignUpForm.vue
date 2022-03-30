@@ -2,16 +2,18 @@
       <form @submit.prevent="handleSubmit">
             <h1>Sign up</h1>
 
-            <div>
+            <CustomInput label="email" type="email" required v-model="email" />
+            <!-- <div>
                   <label for="email">Email : </label>
                   <input id="email" required type="email" v-model="email" />
-            </div>
+            </div> -->
 
-            <div>
+            <CustomInput label="password" type="password" required v-model="password" />
+            <!-- <div>
                   <label for="password">password : </label>
                   <input id="email" required type="password" v-model="password" />
                   <p class="error" v-if="passwordError">{{ passwordError }}</p>
-            </div>
+            </div> -->
 
             <div>
                   <label for="role">Role : </label>
@@ -57,7 +59,10 @@
 </template>
 
 <script>
+import CustomInput from "./CustomInput.vue";
+
 export default {
+      components: { CustomInput },
       data() {
             return {
                   email: "",
